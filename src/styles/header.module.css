@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+header {
+    width: 100vw;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #fff;
+}
+
+a {
+    color: #111;
+    text-decoration: none;
+}
+
+.container {
+    width: 95vw;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brandingSearch {
+    width: 65%;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.branding a{
+    height: 100%;
+    width: 20%;
+    display: flex;
+    align-items: center;
+}
+
+.branding a span {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin-right: .3em;
+    font-size: 23px;
+}
+
+.branding a span svg {
+    font-size: 35px;
+}
+
+.searchDiv {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.searchDiv input {
+    width: 100%;
+    height: 70%;
+    padding: 0 .7em;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background-color: #edebed;
+    box-shadow: .3px .3px 2px;
+}
+
+.searchDiv input:hover {
+    border: 1px solid #0079D3;
+    box-shadow: none;
+}
+
+.userDiv {
+    height: 100%;
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn {
+    width: 100px;
+    height: 33px;
+    border: 1px solid #0079D3;
+    outline: none;
+    cursor: pointer;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: #0079D3;
+    border-radius: 5px;
+}
+
+.btnBlue {
+    background-color: #0079D3;
+    color: #fff;
+}
+
+.btnBlue:hover {
+    opacity: .6;
+}
+
+.btnSm {
+    height: 33px;
+    width: 33px;
+    background-color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    opacity: .8;
+    font-size: 18px;
+}
+.btnSm:hover {
+    box-shadow: .3px .3px 2px;
+}
+
+
+@media(max-width: 750px) {
+    .noDisp {
+        display: none !important;
+    }
+
+    .brandingSearch {
+        width: 50%;
+    }
+}
+
+@media(max-width: 500px) {
+    .userDiv {
+        width: 45%;
+    }
+
+    .btn {
+        width: 45px;
+        font-size: 10px;
+    }
+}
