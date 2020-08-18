@@ -8,6 +8,7 @@ header {
     align-items: center;
     font-family: 'IBM Plex Sans', sans-serif;
     background-color: #fff;
+    position: sticky;
 }
 
 a {

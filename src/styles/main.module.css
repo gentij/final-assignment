@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+* {
+    font-family: 'IBM Plex Sans', sans-serif;
+}
+
+main {
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    margin-top: 40px;
+    width: 700px;
+}
+
+
+.formContainer form{
+    width: 100%;
+    height: 270px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 2em;
+}
+
+.formContainer form div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.formContainer form div label {
+    width: 10%;
+}
+
+.formContainer form div input {
+    width: 80%;
+    height: 35px;
+    padding: 0 .7em;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background-color: #edebed;
+    box-shadow: .3px .3px 2px;
+}
+
+.formContainer form div input:hover {
+    border: 1px solid #0079D3;
+    box-shadow: none;
+}
+
+.formContainer form div textarea {
+    width: 80%;
+    height: 70px;
+    padding: .7em;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    background-color: #edebed;
+    box-shadow: .3px .3px 2px;
+    resize: none;
+}
+
+.formContainer form div textarea:hover {
+    border: 1px solid #0079D3;
+    box-shadow: none;
+}
+
+.btn {
+    height: 33px;
+    border: 1px solid #0079D3;
+    outline: none;
+    cursor: pointer;
+    background-color: #fff;
+    text-transform: uppercase;
+    font-size: 12px;
+    font-weight: 700;
+    color: #0079D3;
+    border-radius: 5px;
+}
+
+.postsContainer {
+    margin-top: 50px;
+    width: 100%;
+    background-color: #fff;
+}
