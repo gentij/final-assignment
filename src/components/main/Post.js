@@ -10,30 +10,31 @@ import { FaArrowAltCircleUp } from 'react-icons/fa'
 import { FaArrowAltCircleDown } from 'react-icons/fa'
 
 const Post = (props) => {
+    const {id, title, content, date, upvoted, downvote, upvote, editPost, deletePost} = props
 
     return (
         <div className={Style.post}>
             <div className={Style.wrapper}>
                 <div className={Style.postHeader}>
-                    <h3 className="title">{props.title}</h3>
-                    <p className="date">{props.date}</p>
+                    <h3 className="title">{title}</h3>
+                    <p className="date">{date}</p>
                 </div>
                 <div className={Style.contentWrapper}>
-                    <p className="content">{props.content}</p>
+                    <p className="content">{content}</p>
                 </div>
                 <div className={Style.interactions}>
                     <div className="rating">
                         {
                             props.upvoted ? (
-                                <button onClick={() => props.downvote(props.id)}><FaArrowAltCircleDown />Downvote</button>
+                                <button onClick={() => downvote(id)}><FaArrowAltCircleDown />Downvote</button>
                             ) : (
-                                <button onClick={() => props.upvote(props.id)}><FaArrowAltCircleUp />Upvote</button>
+                                <button onClick={() => upvote(id)}><FaArrowAltCircleUp />Upvote</button>
                             )
                         }
                     </div>
                     <div className={Style.options}>
-                        <button><FaTags /> Edit</button>
-                        <button onClick={() => props.deletePost(props.id)}><FaTrashAlt />Delete</button>
+                        <button onClick={() => editPost(id)}><FaTags /> Edit</button>
+                        <button onClick={() => deletePost(id)}><FaTrashAlt />Delete</button>
                     </div>
                 </div>
             </div>

@@ -29,7 +29,7 @@ const Main = () => {
     const updateTitle = (e) => {
         setCurrentPost({
                 ...currentPost,
-                id: uuidv4(),
+                id: uuidv4(), //random id library
                 title: e.target.value,
                 date: date.toDateString()
         })
@@ -83,6 +83,20 @@ const Main = () => {
         }))
     }
 
+    const editPost = (id) => {
+        const newTitle = prompt('New title:')
+        const newContent = prompt('New content:')
+
+        setPosts(prevState => prevState.map(post => {
+            if(post.id === id) {
+                post.title = newTitle
+                post.content = newContent
+                post.date = date.toDateString()
+            }
+            return post
+        }))
+    }
+
     //Set items to localStorage
     localStorage.setItem("data", JSON.stringify(posts));
 
@@ -124,6 +138,7 @@ const Main = () => {
                                         deletePost = {deletePost}
                                         upvote = {upvotePost}
                                         downvote = {downvotePost}
+                                        editPost = {editPost}
                                     />
                                 ))
                             )
