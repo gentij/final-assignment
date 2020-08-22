@@ -1,5 +1,8 @@
 import React, { useState } from 'react'
 
+//random id library
+import { v4 as uuidv4 } from 'uuid';
+
 //components
 import Post from './Post'
 
@@ -7,31 +10,39 @@ import Post from './Post'
 import Style from '../../styles/main.module.css'
 
 const Main = () => {
-    const [posts, setPosts] = useState([])
+    //Define state to localStorage data if there is any, otherwise define an empty array
+    const [posts, setPosts] = useState(
+        JSON.parse(localStorage.getItem('data')) ? 
+        JSON.parse(localStorage.getItem('data')) : []
+    )
 
     const [currentPost, setCurrentPost] = useState({
         id: null,
         title: '',
         content: '',
-        upvoted: false
+        upvoted: false,
+        date: ''
     })
+
+    let date = new Date();
 
     const updateTitle = (e) => {
         setCurrentPost({
                 ...currentPost,
-                id: posts.length,
-                title: e.target.value
+                id: uuidv4(),
+                title: e.target.value,
+                date: date.toDateString()
         })
     }
 
     const updateContent = (e) => {
         setCurrentPost({
                 ...currentPost,
-                id: posts.length,
-                content: e.target.value
+                content: e.target.value,
         })
     }
 
+    // Post 
     const post = (e) => {
         e.preventDefault();
         if(currentPost.title && currentPost.content) {
@@ -46,6 +57,34 @@ const Main = () => {
             upvoted: false
         })
     }
+
+    //Delete post
+    const deletePost = (id) => {
+        setPosts(posts => posts.filter(post => post.id !== id))
+    }
+
+    //Upvote post
+    const upvotePost = (id) => {
+        setPosts(prevState => prevState.map(post => {
+            if(post.id === id) {
+                post.upvoted = true
+            }
+            return post
+        }))
+    }
+
+    //Downvote post
+    const downvotePost = (id) => {
+        setPosts(prevState => prevState.map(post => {
+            if(post.id === id) {
+                post.upvoted = false
+            }
+            return post
+        }))
+    }
+
+    //Set items to localStorage
+    localStorage.setItem("data", JSON.stringify(posts));
 
     return (
         <main>
@@ -81,6 +120,10 @@ const Main = () => {
                                         title={e.title}
                                         content = {e.content}
                                         upvoted = {e.upvoted}
+                                        date = {e.date}
+                                        deletePost = {deletePost}
+                                        upvote = {upvotePost}
+                                        downvote = {downvotePost}
                                     />
                                 ))
                             )

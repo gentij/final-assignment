@@ -14,7 +14,7 @@ const Header = () => {
                 <div className={Style.brandingSearch}>
                     <div className={Style.branding}>
                         <h1>
-                            <a href="#">
+                            <a href="home">
                                 <span><FaReddit /></span>
                                 <span className={Style.noDisp}>reddit</span>
                             </a>

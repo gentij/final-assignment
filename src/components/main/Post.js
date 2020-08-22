@@ -16,7 +16,7 @@ const Post = (props) => {
             <div className={Style.wrapper}>
                 <div className={Style.postHeader}>
                     <h3 className="title">{props.title}</h3>
-                    <p className="date">18/08/2020</p>
+                    <p className="date">{props.date}</p>
                 </div>
                 <div className={Style.contentWrapper}>
                     <p className="content">{props.content}</p>
@@ -25,15 +25,15 @@ const Post = (props) => {
                     <div className="rating">
                         {
                             props.upvoted ? (
-                                <button><FaArrowAltCircleDown /> Downvote</button>
+                                <button onClick={() => props.downvote(props.id)}><FaArrowAltCircleDown />Downvote</button>
                             ) : (
-                                <button><FaArrowAltCircleUp /> Upvote</button>
+                                <button onClick={() => props.upvote(props.id)}><FaArrowAltCircleUp />Upvote</button>
                             )
                         }
                     </div>
                     <div className={Style.options}>
                         <button><FaTags /> Edit</button>
-                        <button><FaTrashAlt />Delete</button>
+                        <button onClick={() => props.deletePost(props.id)}><FaTrashAlt />Delete</button>
                     </div>
                 </div>
             </div>
