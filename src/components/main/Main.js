@@ -89,8 +89,8 @@ const Main = () => {
 
         setPosts(prevState => prevState.map(post => {
             if(post.id === id) {
-                post.title = newTitle
-                post.content = newContent
+                post.title = newTitle || post.title
+                post.content = newContent || post.content
                 post.date = date.toDateString()
             }
             return post
