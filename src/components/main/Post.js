@@ -10,7 +10,7 @@ import { FaArrowAltCircleUp } from 'react-icons/fa'
 import { FaArrowAltCircleDown } from 'react-icons/fa'
 
 const Post = (props) => {
-    const {id, title, content, date, upvoted, downvote, upvote, editPost, deletePost} = props
+    const {id, title, content, date, downvote, upvote, editPost, deletePost} = props
 
     return (
         <div className={Style.post}>
