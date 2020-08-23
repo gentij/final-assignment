@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 
 //random id library
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from 'uuid'
 
 //components
 import Post from './Post'
@@ -98,7 +98,7 @@ const Main = () => {
     }
 
     //Set items to localStorage
-    localStorage.setItem("data", JSON.stringify(posts));
+    localStorage.setItem('data', JSON.stringify(posts));
 
     return (
         <main>
